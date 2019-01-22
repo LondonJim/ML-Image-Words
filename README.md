@@ -19,7 +19,7 @@ Have the images converted into tensors
 
 As a User
 So the results are accurate
-Have the computer learn
+Have the computer learn to associate words with images
 
 As a User
 So I can display words

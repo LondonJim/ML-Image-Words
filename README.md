@@ -38,4 +38,4 @@ Jasmine 3.3.0
 
 Cypress 3.1.4
 
-- enter `npm test` in project root directory
+- enter `npm test` in project root directory (`npm install` must be run once first)

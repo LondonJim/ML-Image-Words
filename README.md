@@ -29,3 +29,13 @@ As a User
 So I don't have to repeatedly capture images
 The software saves necessary data
 ```
+
+### Testing
+
+Jasmine 3.3.0
+
+- copy `SpecRunner.html` with path into browser
+
+Cypress 3.1.4
+
+- enter `npm test` in project root directory

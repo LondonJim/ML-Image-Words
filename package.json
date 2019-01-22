@@ -1,0 +1,17 @@
+{
+  "name": "face-word",
+  "version": "1.0.0",
+  "description": "An exercise in machine learning using TensorFlow JavaScript library. The idea is to capture images of an individual and then associate certain facial expressions with words. These words can then be displayed on screen when the individual makes a facial expression into the webcam.",
+  "main": "index.html",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "cypress open"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^3.1.4"
+  }
+}

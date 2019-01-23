@@ -3,8 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="./src/camera.js"></script>
   </head>
   <body>
-    
+    <div class="video-wrap">
+      <video id="video" playsinline autoplay></video>
+    </div>
+
+    <div class="controller">
+      <button id="snap">Capture Image</button>
+    </div>
+
+    <canvas id="canvas" width="320" height="200"></canvas>
+
+    <script>
+      camera = new Camera
+      camera.streamVideo()
+      camera.grabPhoto()
+    </script>
   </body>
 </html>

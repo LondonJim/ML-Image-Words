@@ -1,24 +1,28 @@
 describe("Camera", () => {
 
+  let setValue = ""
+
+  data = () => {
+    return {
+      imageConvert: () => {},
+    }
+  }
+
   document.createElement.bind(document)
   document.getElementById = (tagName) => {
     return {
       getContext: () => ({ drawImage: () => {},
                            getImageData: () => {} }),
       srcObject: "video.srcObject",
-      addEventListener: () => {}
+      addEventListener: (arg1, arg2) => { this.data = data, arg2() },
+      innerHTML: "",
+      value: setValue
     }
   }
 
   window.navigator['__defineGetter__']('mediaDevices', function(){
     return { getUserMedia: (arg) => { return arg } }
   })
-
-  let data = () => {
-    return {
-      image: () => {}
-    }
-  }
 
   describe("#streamVideo", () => {
 
@@ -33,9 +37,15 @@ describe("Camera", () => {
 
   describe("#grabPhoto", () => {
 
-    it("set click event listener", () => {
+    it("no image recorded if no word value", () => {
       camera = new Camera(undefined, data)
-      expect(camera.grabPhoto()).toEqual('event listener active')
+      expect(camera.grabPhoto()).toEqual('no word')
+    })
+
+    it("image recorded it there is a word", () => {
+      camera = new Camera(undefined, data)
+      setValue = "word"
+      expect(camera.grabPhoto()).toEqual('picture taken')
     })
 
   })

@@ -2,7 +2,7 @@
 
 class Camera {
 
-  constructor(videoArgs = { audio: false, video: { width: 320, height: 200 } },
+  constructor(videoArgs = { audio: false, video: { width: 200, height: 200 } },
               data = new Data) {
     this.data = data
     this.video = document.getElementById('video')
@@ -10,7 +10,7 @@ class Camera {
     this.ctx = this.canvas.getContext('2d')
     this.snap = document.getElementById("snap")
     this.videoArgs = videoArgs
-    this.width = 320
+    this.width = 200
     this.height = 200
   }
 
@@ -22,11 +22,18 @@ class Camera {
 
   grabPhoto() {
     this.snap.addEventListener("click", function() {
-      this.ctx.drawImage(this.video, 0, 0, this.width, this.height)
-      let imageData = this.ctx.getImageData(0, 0, this.width, this.height)
-      this.data.imageConvert(imageData)
+      if (document.getElementById('word').value !== "") {
+        document.getElementById('alert').innerHTML = ""
+        this.ctx.drawImage(this.video, 0, 0, this.width, this.height)
+        let imageData = this.ctx.getImageData(0, 0, this.width, this.height)
+        this.data.imageConvert(imageData)
+        alert = "picture taken"
+      } else {
+        document.getElementById('alert').innerHTML = "Please enter a word"
+        alert = "no word"
+      }
     }.bind(this))
-    return 'event listener active'
+    return alert
   }
 
 }

@@ -10,4 +10,9 @@ describe('Main screen', () => {
     cy.get('button').contains('Capture Image')
   })
 
+  it('contains a text input box', () => {
+    cy.get('input').should('have.id', 'word')
+    cy.get('input').should('have.value', '')
+  })
+
 })

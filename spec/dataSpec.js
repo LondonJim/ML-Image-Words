@@ -12,10 +12,13 @@ describe("Data", () => {
                                   101, 175, 212, 245],
                            height: 200,
                            width: 320 }
-      data = new Data
-      data.imageConvert(mockImageDataOne)
 
-      expect(data.imageConvert(mockImageDataTwo)).toEqual([mockImageDataOne, mockImageDataTwo])
+      word = "word"
+
+      data = new Data
+      data.imageAdd(mockImageDataOne, word)
+
+      expect(data.imageAdd(mockImageDataTwo, word)).toEqual([mockImageDataOne, mockImageDataTwo])
     })
   })
 

@@ -3,7 +3,7 @@ describe("Camera", () => {
     setValue = ""
 
     dataKlass = {
-      imageConvert: () => {},
+      imageAdd: () => {},
     }
 
     document.createElement.bind(document)
@@ -28,7 +28,7 @@ describe("Camera", () => {
     it("set video.srcObject", async () => {
       camera = new Camera ('stream values', dataKlass)
       stream = await camera.streamVideo()
-      
+
       expect(stream).toEqual('stream values')
     })
 

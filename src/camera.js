@@ -21,20 +21,23 @@ class Camera {
   }
 
   grabPhoto() {
-    let alert
+    let alertMessage
+
     this.snap.addEventListener("click", function() {
-      if (document.getElementById('word').value !== "") {
+      let word = document.getElementById('word').value
+
+      if (word !== "") {
         document.getElementById('alert').innerHTML = ""
         this.ctx.drawImage(this.video, 0, 0, this.width, this.height)
         let imageData = this.ctx.getImageData(0, 0, this.width, this.height)
-        this.data.imageConvert(imageData)
-        alert = "picture taken"
+        this.data.imageAdd(imageData, word)
+        alertMessage = "picture taken"
       } else {
         document.getElementById('alert').innerHTML = "Please enter a word"
-        alert = "no word"
+        alertMessage = "no word"
       }
     }.bind(this))
-    return alert
+    return alertMessage
   }
 
 }

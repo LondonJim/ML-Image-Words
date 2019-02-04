@@ -4,7 +4,7 @@ class Data {
     this.data = []
   }
 
-  imageConvert(imageData) {
+  imageAdd(imageData, word) {
     this.data.push(imageData)
     return this.data
   }

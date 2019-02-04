@@ -21,6 +21,7 @@ class Camera {
   }
 
   grabPhoto() {
+    let alert
     this.snap.addEventListener("click", function() {
       if (document.getElementById('word').value !== "") {
         document.getElementById('alert').innerHTML = ""

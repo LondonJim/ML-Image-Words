@@ -3,22 +3,23 @@ describe("Data", () => {
   describe('#imageConvert', () => {
 
     it('returns images data in array', () => {
-      mockImageDataOne = { data: [199, 176, 142, 255,
+
+      mockImageData = { data: [199, 176, 142, 255,
                                   196, 172, 142, 255],
                            height: 200,
                            width: 320 }
 
-      mockImageDataTwo = { data: [121, 116, 222, 235,
-                                  101, 175, 212, 245],
-                           height: 200,
-                           width: 320 }
+      tfMock = {
+        fromPixels: () => { return mockImageData },
+      }
 
       word = "word"
 
-      data = new Data
-      data.imageAdd(mockImageDataOne, word)
+      data = new Data(tfMock)
 
-      expect(data.imageAdd(mockImageDataTwo, word)).toEqual([mockImageDataOne, mockImageDataTwo])
+      data.imageAdd(mockImageData, word)
+
+      expect(data.imageAdd(mockImageData, word)).toEqual([mockImageData, mockImageData])
     })
   })
 

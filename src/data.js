@@ -5,6 +5,7 @@ class Data {
   }
 
   imageConvert(imageData) {
-    return imageData
+    this.data.push(imageData)
+    return this.data
   }
 }

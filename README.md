@@ -2,6 +2,10 @@
 
 An exercise in machine learning using TensorFlow JavaScript library. The idea is to capture images of an individual and then associate certain facial expressions with words. These words can then be displayed on screen when the individual makes a facial expression into the webcam.
 
+### Updates
+
+04/02/18 - Add tensorflow code to create a model and train. Experimenting and playing around with the various tf variables.
+
 ### User stories
 
 ```
